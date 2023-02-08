@@ -1,0 +1,98 @@
+<header id="small-header" class="mr-top" style="background-image: url(../../../../assets/img/bg-bg.png);">
+    <div class="text">
+        <h1>Get Admission</h1>
+        <p>Azzuha Islamic Institute</p>
+    </div>
+</header>
+
+
+<section id="get-admission-page" class="container-fluid">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="admission-pnl">
+                    <div class="admission-pnl-inner">
+                        <div class="get-admission-head">
+                            <ul>
+                                <li class="active complete">
+                                    <span>1</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 1 <span>Complete</span>
+                                        </p>
+                                        <h6>Student Information</h6>
+                                    </div>
+                                </li>
+                                <li class="active">
+                                    <span>2</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 2 <span>Complete</span>
+                                        </p>
+                                        <h6>Accademic Information</h6>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>3</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 3 <span>Complete</span>
+                                        </p>
+                                        <h6>Attach Documents</h6>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>4</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 4 <span>Complete</span>
+                                        </p>
+                                        <h6>Preview Form</h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="get-admission-body">
+                            <form name="templateform"  (ngSubmit)="f.form.valid" #f="ngForm"
+                            [formGroup]="step1Form" novalidate>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <label>Previous Education</label>
+                                        <select class="form-control" autocomplete="off" formControlName="previousEducation">
+                                            <option [ngValue]="country" *ngFor="let country of previousEducation">{{country.name}}</option>
+                                          
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <label>From</label>
+                                        <input type="text" class="form-control" formControlName="from" autocomplete="off" placeholder="Select Area">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <label>Course you want to apply</label>
+                                        <select class="form-control" autocomplete="off" formControlName="couresName" >
+                                            <option *ngFor="let option of CoursesModel"  [ngValue]="option" >{{option.courseName}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <p class="error-txt">
+                                            With check box Course
+                                        </p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="get-admission-footer">
+                            <div>
+                                <a disabled="" class="reg-btn sky fill" href="get-admission.html" [routerLink]="['admision-step2',id]">Back</a>
+                                <a disabled="" class="reg-btn blue fill" (click)="onSubmit()"   class="reg-btn sky fill {{f.form.invalid ? 'disabled' : ''}}" >Next</a>
+                            </div>
+                            <span>2/4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

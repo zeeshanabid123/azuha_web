@@ -1,0 +1,286 @@
+#user-login {
+  position: relative;
+  padding-bottom: 200px;
+  padding-top: 150px;
+  text-align: center;
+}
+
+#user-login .txt-container {
+  position: relative;
+  z-index: 5;
+}
+
+#user-login::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  content: "";
+  z-index: -1;
+  background: rgb(206, 241, 179);
+  background: -moz-linear-gradient(left, rgba(206, 241, 179, 1) 0%, rgba(252, 251, 190, 1) 81%, rgba(254, 251, 190, 1) 99%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(206, 241, 179, 1) 0%, rgba(252, 251, 190, 1) 81%, rgba(254, 251, 190, 1) 99%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(206, 241, 179, 1) 0%, rgba(252, 251, 190, 1) 81%, rgba(254, 251, 190, 1) 99%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cef1b3', endColorstr='#fefbbe', GradientType=1);
+  /* IE6-9 */
+}
+
+.user-bg-left {
+  position: absolute;
+  left: 5%;
+  bottom: 30px;
+  width: auto;
+  content: "";
+  z-index: 1;
+}
+
+.user-bg-right {
+  position: absolute;
+  right: 15px;
+  bottom: 30px;
+  width: auto;
+  content: "";
+  z-index: 1;
+}
+
+#user-login h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+#user-login h1 span {
+  font-weight: normal;
+}
+
+#user-login input {
+  border: hidden;
+  border-bottom: 2px solid;
+  border-color: #707070;
+  border-radius: 0;
+  margin-bottom: 20px;
+  padding-left: 25px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  background-position: left center;
+}
+
+// #user-login input.user-input {
+//   background-image: url(../../../../../assets/img/user-icon.svg);
+// }
+
+// #user-login input.password-input {
+//   background-image: url(../../../../../assets/img/password-icon.svg);
+// }
+
+#user-login input:focus {
+  color: #333333;
+  background-color: transparent;
+  border-color: #FFC013;
+  outline: 0;
+  box-shadow: unset;
+}
+
+::-webkit-input-placeholder {
+  /* Edge */
+  color: #DFDFDF !important;
+  font-size: 16px;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer */
+  color: #DFDFDF !important;
+  font-size: 16px;
+}
+
+::placeholder {
+  color: #DFDFDF !important;
+  font-size: 16px;
+}
+
+#user-login .reset-password {
+  float: right;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#user-login .reset-password {
+  display: inline-block;
+  color: #707070;
+  font-size: 16px;
+  text-decoration: underline !important;
+}
+
+#user-login .reset-password:hover {
+  color: #29AF36;
+}
+
+#user-login p {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#user-login p a {
+  font-weight: bold;
+}
+
+input.reg-btn-small {
+  margin-top: 30px;
+}
+
+/* CheckBox */
+
+#user-login .check-box-box {
+  display: inline-block;
+  float: left;
+}
+
+#user-login.reset-password {
+  padding-bottom: 250px;
+}
+
+.reset-password .reg-btn-small,
+#user-login.reset-password input.reg-btn-small,
+.reset-password input.reg-btn-small {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.reg-btn-small.login-again {
+  margin-top: 0;
+}
+
+.reset-password .reg-btn-small {
+  min-width: auto;
+}
+
+#user-login.reset-password p {
+  margin-bottom: 7px;
+  margin-top: 15px;
+}
+
+@media (max-width:1350px) {
+  .user-bg-right {
+    max-width: 44%;
+  }
+
+  .user-bg-left {
+    left: 15px;
+  }
+
+  #user-login.reset-password {
+    padding-bottom: 220px;
+  }
+}
+
+@media (max-width:1200px) {
+  #user-login::after {
+    background-size: contain;
+  }
+
+  .user-bg-right {
+    max-width: 44%;
+  }
+
+  .user-bg-left {
+    max-width: 35%;
+  }
+
+  #user-login.reset-password {
+    padding-bottom: 195px;
+  }
+}
+
+@media (max-width:991px) {
+  #user-login {
+    padding-top: 150px;
+    padding-bottom: 250px;
+  }
+
+  #user-login::after {
+    width: 40%;
+  }
+
+  ::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+
+  :-ms-input-placeholder {
+    font-size: 14px;
+  }
+
+  ::placeholder {
+    font-size: 14px;
+  }
+
+  #user-login.reset-password {
+    padding-bottom: 160px;
+  }
+}
+
+@media (max-width:767px) {
+
+  .user-bg-right,
+  .user-bg-left,
+  #user-login::after,
+  #user-login::before {
+    display: none;
+  }
+
+  #user-login {
+    padding-bottom: 50px;
+  }
+
+  .reset-password input.reg-btn-small {
+    margin-top: 20px;
+  }
+
+  #user-login.reset-password {
+    padding-bottom: 50px;
+    padding-top: 120px;
+  }
+
+  .reset-password .reg-btn-small,
+  #user-login.reset-password input.reg-btn-small,
+  .reset-password input.reg-btn-small {
+    margin-top: 30px;
+  }
+
+  .reg-btn-small.login-again {
+    margin-top: 0px !important;
+  }
+}
+
+@media (max-width:575px) {
+  #user-login {
+    text-align: center;
+  }
+
+  .check-box-box {
+    float: left;
+  }
+
+  #user-login::before {
+    display: none;
+  }
+
+  #user-login {
+    padding-bottom: 30px;
+    padding-top: 120px;
+  }
+
+  #user-login .reset-password {
+    font-size: 14px;
+  }
+
+  #user-login p {
+    margin-top: 30px;
+  }
+}

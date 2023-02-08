@@ -1,0 +1,26 @@
+<main class="" [ngClass]="{ 'inner-main': isHomeRoute() === false,'landing-main light-bg':isHomeRoute()===true}">
+  <app-header ></app-header>
+
+  <div class="center-main" *ngIf="navigating">
+    <div class="table-cell">
+      <div class="table-cell-center">
+        <div class="sk-chase">
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet *ngIf="isOnline;else isOffline" ></router-outlet>
+  <ng-template #isOffline>
+    <div>
+      <p class="offline-error" i18n="@@offlineMessage">Without connection we can not load anything!</p>
+    </div>
+  </ng-template>
+  <app-footer></app-footer>
+</main>

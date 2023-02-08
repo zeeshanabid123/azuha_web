@@ -1,0 +1,299 @@
+<header id="small-header" class="mr-top" style="background-image: url(../../../../assets/img/bg-bg.png);">
+    <div class="text">
+        <h1>Get Admission</h1>
+        <p>Azzuha Islamic Institute</p>
+    </div>
+</header>
+
+<section id="get-admission-page" class="container-fluid">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="admission-pnl">
+                    <div class="admission-pnl-inner">
+                        <div class="get-admission-head">
+                            <ul>
+                                <li class="active">
+                                    <span>1</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 1 <span>Complete</span>
+                                        </p>
+                                        <h6>Student Information</h6>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>2</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 2 <span>Complete</span>
+                                        </p>
+                                        <h6>Accademic Information</h6>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>3</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 3 <span>Complete</span>
+                                        </p>
+                                        <h6>Attach Documents</h6>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>4</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 4 <span>Complete</span>
+                                        </p>
+                                        <h6>Preview Form</h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="get-admission-body">
+                            <form name="templateform"  (ngSubmit)="f.form.valid" #f="ngForm"
+                            [formGroup]="step1Form" novalidate>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <label>Full Name
+                                            <div
+                                            *ngIf="f.form.controls['name'].invalid && (f.form.controls['name'].dirty || f.form.controls['name'].touched)"
+                                            class="animated fadeIn text-danger empty-error-field">
+                                            <small>
+                                              <div *ngIf="f.form.controls['name']?.errors.required && false">
+                                                Field is required.
+                                              </div>
+                                              <div *ngIf="f.form.controls['name']?.errors.minlength">
+                                                Field minimum length should be 3.
+                                              </div>
+                                              <div *ngIf="f.form.controls['name']?.errors.maxlength">
+                                                Field maximum length should be 50.
+                                              </div>
+                                            </small>
+                                          </div>
+
+                                        </label>
+                                        <input type="text" formControlName="name" id="name"  pattern=".*\S+.*" minlength="3" maxlength="50" required class="form-control" autocomplete="off" placeholder="Full Name">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <label>Phone Number
+                                        <div
+                                        *ngIf="f.form.controls['phone'].invalid && f.form.controls['phone'].value !== null && (f.form.controls['phone'].dirty || f.form.controls['phone'].touched)"
+                                        class="animated fadeIn text-danger empty-error-field">
+                                        <small>
+                                          <div *ngIf="f.form.controls['phone']?.errors.required && false">
+                                            Field is required.
+                                          </div>
+                                          <div *ngIf="f.form.controls['phone']?.invalid">
+                                            Number not valid.
+                                          </div>
+                                          <div *ngIf="f.form.controls['phone']?.errors.minlength">
+                                            Field minimum length should be 3.
+                                          </div>
+                                          <div *ngIf="f.form.controls['phone']?.errors.maxlength">
+                                            Field maximum length should be 50.
+                                          </div>
+                                        </small>
+                                      </div>
+                                    </label>
+                                    <ngx-intl-tel-input [inputId]="'adsasd'" [cssClass]="'form-control'"
+                                      [preferredCountries]="preferredCountries" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                                      [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                                      [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.UnitedKingdom"
+                                      [enableAutoCountrySelect]="true" [maxLength]="15" [tooltipField]="TooltipLabel.Name"
+                                      [phoneValidation]="false" [separateDialCode]="true" formControlName="phone">
+                                    </ngx-intl-tel-input>
+                                     
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <label>E-MAIL
+                                            <div
+                                            *ngIf="f.form.controls['email'].invalid && (f.form.controls['email'].dirty || f.form.controls['email'].touched)"
+                                            class="animated fadeIn text-danger empty-error-field">
+                                            <small>
+                                              <div *ngIf="f.form.controls['email']?.errors.required && false">
+                                                Field is required.
+                                              </div>
+                                              <div *ngIf="f.form.controls['email']?.errors.pattern">
+                                                Not a valid Email.
+                                              </div>
+                                              <div *ngIf="f.form.controls['email']?.errors.minlength">
+                                                Field minimum length should be 3.
+                                              </div>
+                                              <div *ngIf="f.form.controls['email']?.errors.maxlength">
+                                                Field maximum length should be 50.
+                                              </div>
+                    
+                                            </small>
+                                          </div>
+
+                                        </label>
+                                        <input type="email" class="form-control" formControlName="email" id="emailaddress" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  minlength="3" maxlength="50" autocomplete="off" placeholder="Email Address">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <label>Father/Husband,s Name
+                                            <div
+                                            *ngIf="f.form.controls['fatherName'].invalid && (f.form.controls['fatherName'].dirty || f.form.controls['fatherName'].touched)"
+                                            class="animated fadeIn text-danger empty-error-field">
+                                            <small>
+                                              <div *ngIf="f.form.controls['fatherName']?.errors.required && false">
+                                                Field is required.
+                                              </div>
+                                              <div *ngIf="f.form.controls['fatherName']?.errors.minlength">
+                                                Field minimum length should be 3.
+                                              </div>
+                                              <div *ngIf="f.form.controls['fatherName']?.errors.maxlength">
+                                                Field maximum length should be 50.
+                                              </div>
+                                            </small>
+                                          </div>
+
+                                        </label>
+                                        <input type="text" formControlName="fatherName" id="fatherName"  pattern=".*\S+.*" minlength="3" maxlength="50" required class="form-control" autocomplete="off" placeholder="Father/Husband,s Name">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <label>Date Of Birth</label>
+                                        <div class="row">
+                                          
+
+                                              <input type="text" ngbDatepicker
+                                          [minDate]="{year: 1900, month: 1, day: 1}"
+                                          [maxDate]="{year: 2020, month: 1, day: 1}" #d="ngbDatepicker"
+                                          readonly required formControlName="dob" (click)="d.toggle()"  name="dob"  class="form-control" placeholder=""  class="form-control" placeholder="" autocomplete="off">
+                                        
+                                           
+                                            <!-- <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <label class="small-label">year</label>
+                                                <select class="form-control" autocomplete="off">
+                                                    <option>2022</option>
+                                                    <option>2021</option>
+                                                    <option>2020</option>
+                                                </select>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="full-div min-height">
+                                        </div>
+                                        <label>ID Card No(Self/Parent/Gradient)
+                                            <div
+                                            *ngIf="f.form.controls['idCardNumber'].invalid && (f.form.controls['idCardNumber'].dirty || f.form.controls['idCardNumber'].touched)"
+                                            class="animated fadeIn text-danger empty-error-field">
+                                            <small>
+                                              <div *ngIf="f.form.controls['idCardNumber']?.errors.required && false">
+                                                Field is required.
+                                              </div>
+                                              <div *ngIf="f.form.controls['idCardNumber']?.errors.minlength">
+                                                Field minimum length should be 3.
+                                              </div>
+                                              <div *ngIf="f.form.controls['idCardNumber']?.errors.maxlength">
+                                                Field maximum length should be 50.
+                                              </div>
+                                            </small>
+                                          </div>
+
+                                        </label>
+                                        <input type="text" formControlName="idCardNumber" id="idCardNumber"  mask="00000 - 00000000 - 0"  required class="form-control" autocomplete="off" placeholder="_ _ _ _ _ -  _ _ _ _ _ _ _ _- _">
+                                      
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                            <label class="form-check-label" for="inlineCheckbox1">Self</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox2">Parent</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                            <label class="form-check-label" for="inlineCheckbox3">Guardian</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <label>Current Address
+                                                <div
+                                                *ngIf="f.form.controls['address'].invalid && (f.form.controls['address'].dirty || f.form.controls['address'].touched)"
+                                                class="animated fadeIn text-danger empty-error-field">
+                                                <small>
+                                                  <div *ngIf="f.form.controls['address']?.errors.required && false">
+                                                    Field is required.
+                                                  </div>
+                                                  <div *ngIf="f.form.controls['address']?.errors.minlength">
+                                                    Field minimum length should be 3.
+                                                  </div>
+                                                  <div *ngIf="f.form.controls['address']?.errors.maxlength">
+                                                    Field maximum length should be 50.
+                                                  </div>
+                                                </small>
+                                              </div>
+    
+                                            </label>
+                                            <input type="text" formControlName="address" id="address"  pattern=".*\S+.*" minlength="3" maxlength="1000" required class="form-control" autocomplete="off" placeholder="Current Address">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+
+                                                <label>City
+                                                    <div
+                                                    *ngIf="f.form.controls['city'].invalid && (f.form.controls['city'].dirty || f.form.controls['city'].touched)"
+                                                    class="animated fadeIn text-danger empty-error-field">
+                                                    <small>
+                                                      <div *ngIf="f.form.controls['city']?.errors.required && false">
+                                                        Field is required.
+                                                      </div>
+                                                      <div *ngIf="f.form.controls['city']?.errors.minlength">
+                                                        Field minimum length should be 3.
+                                                      </div>
+                                                      <div *ngIf="f.form.controls['city']?.errors.maxlength">
+                                                        Field maximum length should be 50.
+                                                      </div>
+                                                    </small>
+                                                  </div>
+        
+                                                </label>
+                                                <input type="text" formControlName="city" id="city"  pattern=".*\S+.*" minlength="3" maxlength="50" required class="form-control" autocomplete="off" placeholder="City">
+                                              
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <label>Country
+                                                    <div
+                                                    *ngIf="f.form.controls['country'].invalid && (f.form.controls['country'].dirty || f.form.controls['country'].touched)"
+                                                    class="animated fadeIn text-danger empty-error-field">
+                                                    <small>
+                                                      <div *ngIf="f.form.controls['country']?.errors.required && false">
+                                                        Field is required.
+                                                      </div>
+                                                      <div *ngIf="f.form.controls['country']?.errors.minlength">
+                                                        Field minimum length should be 3.
+                                                      </div>
+                                                      <div *ngIf="f.form.controls['country']?.errors.maxlength">
+                                                        Field maximum length should be 50.
+                                                      </div>
+                                                    </small>
+                                                  </div>
+        
+                                                </label>
+                                                <input type="text" formControlName="country" id="country"  pattern=".*\S+.*" minlength="3" maxlength="50" required class="form-control" autocomplete="off" placeholder="Country">
+                                              
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="get-admission-footer">
+                            <div>
+                                <a (click)="onSubmit()"   class="reg-btn sky fill {{f.form.invalid ? 'disabled' : ''}}"  >Next</a>
+                            </div>
+                            <span>1/4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

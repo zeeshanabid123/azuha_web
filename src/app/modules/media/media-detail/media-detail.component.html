@@ -1,0 +1,138 @@
+<header id="small-header" class="mr-top" style="background-image: url(../../../../assets/img/bg-bg.png);">
+    <div class="text">
+        <h1 *ngIf="categoryName=='audio'">Audio</h1>
+        <h1 *ngIf="categoryName=='video'">Video</h1>
+        <p>Azzuha Islamic Institute</p>
+    </div>
+</header>
+
+<section id="audio-video-page" class="container-fluid inner-page">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <!-- Selection Panel -->
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="side-bar">
+                        <div class="side-head">
+                            <h4 *ngIf="categoryName=='audio'">Audio Categories</h4>
+                            <h4 *ngIf="categoryName=='video'">Video Categories</h4>
+
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <p><i class="fa fa-angle-right"></i> Bayanat</p>
+                                        <span>41</span>
+                                    </button>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul class="accordian-list">
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <p><i class="fa fa-angle-right"></i> Courses</p>
+                                        <span>24</span>
+                                    </button>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul class="accordian-list">
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <p><i class="fa fa-angle-right"></i> Workshops</p>
+                                        <span>224</span>
+                                    </button>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul class="accordian-list">
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingfour">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                                        <p><i class="fa fa-angle-right"></i> Quran</p>
+                                        <span>786</span>
+                                    </button>
+                                </div>
+                                <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul class="accordian-list">
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Selection Panel -->
+                <div class="col-lg-9 col-md-8 col-sm-12">
+                    <div class="full-div mobile-scroll">
+                        <table class="audio-table" *ngIf="categoryName=='audio'">
+                            <thead>
+                                <tr>
+                                    <td>#</td>
+                                    <td colspan="4">Tarjama Tafseer-e-Quran</td>
+                                    <td>Length</td>
+                                    <td>Play</td>
+                                    <td>Download</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let m of MediaMainModel; let i = index">
+                                    <td>{{i+1}}</td>
+                                    <td colspan="4">{{m.name}}</td>
+                                    <td>00:57:38</td>
+                                    <td><audio controls>
+                                        <source  type="audio/mpeg"  [src]="m.fileUrl" >
+                                      </audio></td>
+                                    <td><a download="m.fileUrl"><button><i class="fa fa-download"></i></button></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="youtube full-div" *ngIf="categoryName=='video'">
+                            <div *ngFor="let m of MediaMainModel; let i = index">
+                                <iframe [class.thumbnail]="thumbnail" [src]="getSantizeUrl(m.fileUrl)" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen
+      allowfullscreen></iframe>
+                                
+                            </div>
+                        
+                        </div>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

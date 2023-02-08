@@ -1,0 +1,179 @@
+<header id="small-header" class="mr-top" style="background-image: url(../../../../assets/img/bg-bg.png);">
+    <div class="text">
+        <h1>Courses For Women</h1>
+        <p>Azzuha Islamic Institute</p>
+    </div>
+</header>
+<section id="courses-page" class="container-fluid inner-page">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <!-- Selection Panel -->
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="full-div side-bar light">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <p>Courses</p>
+                                        <a href="javascript:void(0);">Clear All</a>
+                                    </button>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="collapse-checkbox">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <div class="flex-div">
+                                                    <label class="form-check-label" for="exampleCheck1">Quran
+                                                        Courses</label>
+                                                    <span>41</span>
+                                                </div>
+                                            </div>
+                                            <div class="collapse-checkbox">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                                                <div class="flex-div">
+                                                    <label class="form-check-label" for="exampleCheck2">Workshops</label>
+                                                    <span>24</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <p>
+                                            Courses By Days
+                                        </p>
+                                        <a href="javascript:void(0);">Clear All</a>
+                                    </button>
+
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="collapse-checkbox">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck3">
+                                                <div class="flex-div">
+                                                    <label class="form-check-label" for="exampleCheck3">6
+                                                        Days</label>
+                                                    <span>41</span>
+                                                </div>
+                                            </div>
+                                            <div class="collapse-checkbox">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck4">
+                                                <div class="flex-div">
+                                                    <label class="form-check-label" for="exampleCheck4">10
+                                                        Days</label>
+                                                    <span>24</span>
+                                                </div>
+                                            </div>
+                                            <div class="collapse-checkbox">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck5">
+                                                <div class="flex-div">
+                                                    <label class="form-check-label" for="exampleCheck5">40
+                                                        Days</label>
+                                                    <span>15</span>
+                                                </div>
+                                            </div>
+                                            <div class="collapse-checkbox">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck6">
+                                                <div class="flex-div">
+                                                    <label class="form-check-label" for="exampleCheck6">1
+                                                        Month</label>
+                                                    <span>5</span>
+                                                </div>
+                                            </div>
+                                            <div class="collapse-checkbox">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck7">
+                                                <div class="flex-div">
+                                                    <label class="form-check-label" for="exampleCheck7">3
+                                                        Month</label>
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                            <div class="collapse-checkbox">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck8">
+                                                <div class="flex-div">
+                                                    <label class="form-check-label" for="exampleCheck8">1
+                                                        Year</label>
+                                                    <span>5</span>
+                                                </div>
+                                            </div>
+                                            <div class="collapse-checkbox">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck9">
+                                                <div class="flex-div">
+                                                    <label class="form-check-label" for="exampleCheck9">2
+                                                        Years</label>
+                                                    <span>6</span>
+                                                </div>
+                                            </div>
+                                            <div class="collapse-checkbox">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck10">
+                                                <div class="flex-div">
+                                                    <label class="form-check-label" for="exampleCheck10">3
+                                                        Years</label>
+                                                    <span>4</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Selection Panel -->
+                <div class="col-lg-9 col-md-8 col-sm-12">
+                    <div class="row">
+                        <!-- Course Details Post-->
+                        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let c of CoursesModel">
+                            <div class="small-post empty mid">
+                                <div class="img-pnl">
+                                    <img src="{{baseUrl+''+c.courseImage}}" alt="">
+                                </div>
+                                <div class="txt-pnl">
+                                    <b>Duration {{c.courseDuration}} Month</b>
+                                    <h3>{{c.courseName}}</h3>
+                                    <div [innerHtml]="c.courseDetail"></div>
+                                    <a class="reg-btn sky" href="get-admission.html" [routerLink]="['admision-step1',c.id]">Get Admission</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Course Details Post-->
+                    
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-right">
+                            <div class="brdr"></div>
+                            <!-- Pagination -->
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0);" aria-label="Previous">
+                                        <span aria-hidden="true">«</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">6</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0);" aria-label="Next">
+                                        <span aria-hidden="true">»</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- Pagination -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

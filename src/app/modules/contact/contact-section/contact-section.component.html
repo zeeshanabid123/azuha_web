@@ -1,0 +1,135 @@
+<header id="small-header" class="mr-top" style="background-image: url(../../../../assets/img/bg-bg.png);">
+    <div class="text">
+        <h1>Contact</h1>
+        <p>Azzuha Islamic Institute</p>
+    </div>
+</header>
+<section id="contact-page" class="container-fluid inner-page">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div [innerHtml]="aboutUs.text"></div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <form name="templateform"  (ngSubmit)="f.form.valid" #f="ngForm"
+                    [formGroup]="step1Form" novalidate>
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-12 col-md-12">
+
+                                <label>Full Name
+                                    <div
+                                    *ngIf="f.form.controls['name'].invalid && (f.form.controls['name'].dirty || f.form.controls['name'].touched)"
+                                    class="animated fadeIn text-danger empty-error-field">
+                                    <small>
+                                      <div *ngIf="f.form.controls['name']?.errors.required && false">
+                                        Field is required.
+                                      </div>
+                                      <div *ngIf="f.form.controls['name']?.errors.minlength">
+                                        Field minimum length should be 3.
+                                      </div>
+                                      <div *ngIf="f.form.controls['name']?.errors.maxlength">
+                                        Field maximum length should be 50.
+                                      </div>
+                                    </small>
+                                  </div>
+
+                                </label>
+                                <input type="text" formControlName="name" id="name"  pattern=".*\S+.*" minlength="3" maxlength="1000" required class="form-control" autocomplete="off" placeholder="Full Name">
+                               
+                             
+                            </div>
+                            <div class="col-lg-12 col-sm-12 col-md-12">
+                                <label>Phone Number
+                                    <div
+                                    *ngIf="f.form.controls['phoneNumber'].invalid && (f.form.controls['phoneNumber'].dirty || f.form.controls['phoneNumber'].touched)"
+                                    class="animated fadeIn text-danger empty-error-field">
+                                    <small>
+                                      <div *ngIf="f.form.controls['phoneNumber']?.errors.required && false">
+                                        Field is required.
+                                      </div>
+                                      <div *ngIf="f.form.controls['phoneNumber']?.errors.minlength">
+                                        Field minimum length should be 3.
+                                      </div>
+                                      <div *ngIf="f.form.controls['phoneNumber']?.errors.maxlength">
+                                        Field maximum length should be 50.
+                                      </div>
+                                    </small>
+                                  </div>
+
+                                </label>
+                                <input type="text" formControlName="phoneNumber" id="phoneNumber"  pattern=".*\S+.*" minlength="3" maxlength="1000" required class="form-control" autocomplete="off" placeholder="Phone Number">
+                               
+                                <!-- <label for="">Phone Number</label>
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-4 col-md-12">
+                                        <input type="text" class="form-control" placeholder="Code" autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-8 col-sm-8 col-md-12">
+                                        <input type="text" class="form-control" placeholder="Number" autocomplete="off">
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="col-lg-12 col-sm-12 col-md-12">
+                                <label>Email
+                                    <div
+                                    *ngIf="f.form.controls['email'].invalid && (f.form.controls['email'].dirty || f.form.controls['email'].touched)"
+                                    class="animated fadeIn text-danger empty-error-field">
+                                    <small>
+                                      <div *ngIf="f.form.controls['email']?.errors.required && false">
+                                        Field is required.
+                                      </div>
+                                      <div *ngIf="f.form.controls['email']?.errors.pattern">
+                                        Not a valid Email.
+                                      </div>
+                                      <div *ngIf="f.form.controls['email']?.errors.minlength">
+                                        Field minimum length should be 3.
+                                      </div>
+                                      <div *ngIf="f.form.controls['email']?.errors.maxlength">
+                                        Field maximum length should be 50.
+                                      </div>
+            
+                                    </small>
+                                  </div>
+
+                                </label>
+                                <input type="email" class="form-control" formControlName="email" id="emailaddress" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  minlength="3" maxlength="50" autocomplete="off" placeholder="Email Address">
+                             
+                            </div>
+                            <div class="col-lg-12 col-sm-12 col-md-12">
+                                <label>Message
+                                    <div
+                                    *ngIf="f.form.controls['message'].invalid && (f.form.controls['message'].dirty || f.form.controls['message'].touched)"
+                                    class="animated fadeIn text-danger empty-error-field">
+                                    <small>
+                                      <div *ngIf="f.form.controls['message']?.errors.required && false">
+                                        Field is required.
+                                      </div>
+                                      <div *ngIf="f.form.controls['message']?.errors.minlength">
+                                        Field minimum length should be 3.
+                                      </div>
+                                      <div *ngIf="f.form.controls['message']?.errors.maxlength">
+                                        Field maximum length should be 50.
+                                      </div>
+                                    </small>
+                                  </div>
+
+                                </label>
+                               
+                                
+                                <textarea class="form-control" placeholder="Please Type Your Message" formControlName="message" id="message"  pattern=".*\S+.*" minlength="3" maxlength="1000" autocomplete="off"></textarea>
+                            </div>
+                            <div class="col-lg-12 col-sm-12 col-md-12">
+                                <input type="submit" class="reg-btn sky fill" value="Submit" (click)="onSubmit()" [disabled]="f.form.invalid" autocomplete="off">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div [innerHtml]="aboutUs1.text"></div>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

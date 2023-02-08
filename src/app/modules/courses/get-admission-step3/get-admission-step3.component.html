@@ -1,0 +1,107 @@
+<header id="small-header" class="mr-top" style="background-image: url(../../../../assets/img/bg-bg.png);">
+    <div class="text">
+        <h1>Get Admission</h1>
+        <p>Azzuha Islamic Institute</p>
+    </div>
+</header>
+
+<section id="get-admission-page" class="container-fluid">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="admission-pnl">
+                    <div class="admission-pnl-inner">
+                        <div class="get-admission-head">
+                            <ul>
+                                <li class="active complete">
+                                    <span>1</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 1 <span>Complete</span>
+                                        </p>
+                                        <h6>Student Information</h6>
+                                    </div>
+                                </li>
+                                <li class="active complete">
+                                    <span>2</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 2 <span>Complete</span>
+                                        </p>
+                                        <h6>Accademic Information</h6>
+                                    </div>
+                                </li>
+                                <li class="active">
+                                    <span>3</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 3 <span>Complete</span>
+                                        </p>
+                                        <h6>Attach Documents</h6>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>4</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 4 <span>Complete</span>
+                                        </p>
+                                        <h6>Preview Form</h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="get-admission-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <h5>Copies of your High school record</h5>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p>
+                                            <b>Copies of your High school record</b>
+                                            (All transcripts in single file PDF
+                                            format)
+                                        </p>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Browse file supported JPG, PNG,
+                                                PDF</label>
+                                            <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="fileChangeEvent($event,1)">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p>
+                                            <b>Copy of CNIC/Birth certificate</b>
+                                        </p>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1"> Browse file supported JPG, PNG,
+                                                PDF</label>
+                                            <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="fileChangeEvent($event,2)">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p>
+                                            <b>Copy of B-Form</b>
+                                        </p>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Browse file supported JPG, PNG,
+                                                PDF</label>
+                                            <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="fileChangeEvent($event,3)">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="get-admission-footer">
+                            <div>
+                                <a disabled="" class="reg-btn sky fill" href="get-admission-2.html" [routerLink]="['admision-step2',id]">Back</a>
+                                <a disabled="" class="reg-btn blue fill {{upload? '' : 'disabled'}}" (click)="onSubmit()"   >Next</a>
+                            </div>
+                            <span>3/4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

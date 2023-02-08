@@ -1,0 +1,133 @@
+<section id="employment-history-page" class="component-page container-fluid">
+    <div class="row">
+        <div class="general-div">
+            <div class="row">
+                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+                    <h1>Score Components</h1>
+                </div>
+                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 txt-right">
+                    <div class="nav-search">
+                        <input class="form-control" type="search" placeholder="" aria-label="Search">
+                        <button type="submit"><img src="../../../../../assets/img/icon-search-blue.png" alt="search Icon"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-div">
+                <div class="component-intro">
+                    <div class="txt-pnl">
+                        <div class="table-cell">
+                            <div class="table-cell-center">
+                                <h2>Employment History</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-pnl">
+                        <img src="../../../../../assets/img/employment-history.png" alt="Employment">
+                    </div>
+                </div>
+            </div>
+            <div class="coil-md-12 col-lg-12 col-sm-12 col-xl-12">
+                <form name="templateform" (ngSubmit)="f2.form.valid" #f2="ngForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+                            <div class="full-div addition-panel">
+                                <!-- Post -->
+                             
+                                <div class="full-div addition-panel-inner"  *ngFor="let ad of employemnthistory; let i = index; trackBy:trackByFn">
+                                    <div class="padding-div" >
+                                        <div class="row">
+                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                                                <label>
+                                                    Company Name / Location <span>*</span>
+                                                </label>
+                                                <input type="text" required [(ngModel)]="ad.companyName" #companyName="ngModel"  name="companyName_{{i}}"  class="form-control" placeholder="" autocomplete="off">
+                                            </div>
+                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                                                <label>
+                                                    Type of Business
+                                                </label>
+                                                <input type="text" required [(ngModel)]="ad.typeOfBusiness" #typeOfBusiness="ngModel"  name="typeOfBusiness_{{i}}" class="form-control" placeholder="" autocomplete="off">
+                                            </div>
+                                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                                                <label>
+                                                    Start Date
+                                                </label>
+                                                <div class="date-calender-panel">
+                                                    <input type="text" ngbDatepicker
+                                                     #d="ngbDatepicker"
+                                                    readonly required [(ngModel)]="ad.startDate" #startDate="ngModel"  name="startDate_{{i}}"  class="form-control" placeholder="" >
+                                                    <div (click)="d.toggle()" ><img src="../../../../../assets/img/icon-calender.png" alt="calender"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                                                <label>
+                                                    End Date
+                                                </label>
+                                                <div class="date-calender-panel">
+                                                    <input type="text"
+                                                    ngbDatepicker
+                                                  
+                                                    #d1="ngbDatepicker"
+                                                    readonly  required [(ngModel)]="ad.endate" #endate="ngModel"  name="endate_{{i}}" class="form-control" placeholder="" >
+                                                    <div (click)="d1.toggle()" ><img src="../../../../../assets/img/icon-calender.png" alt="calender"></div>
+                                                </div>
+                                            </div>
+                                          
+                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12" >
+                                                <label>
+                                                    Key Skills <span>*</span>
+                                                </label>
+                                                <!-- <angular2-multiselect [settings]="dropdownSettings" [data]="languageList"
+                                                formControlName="skillname" required>
+                                            </angular2-multiselect> -->
+                                            <type-ahead required [(ngModel)]="ad.skils" #skils="ngModel"  name="skils_{{i}}" [suggestions]="termsList"  [settings]="customSettings"
+                                            class="form-control" idField="id" [multi]="true" [complex]="true"
+                                            placeholder="Enter your value..."
+                                            ></type-ahead>
+
+                                          
+                                            </div>
+                                            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
+                                                <ul class="btn-list">
+                                                
+                                                   
+                                                </ul>
+                                            </div>
+                                            <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 txt-right">
+                                                <a class="remove-btn" (click)="onRemoveRow(i)" href="javascript:void(0);">
+                                                    <div class="img-pnl">
+                                                        <img src="../../../../../assets/img/icon-recycle.png" alt="Delete">
+                                                    </div>
+                                                    Remove
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="add-btn" style=" margin: 43px 48px;" (click)="addRow()" href="javascript:void(0);"><img src="../../../../../assets/img/icon-add.png" alt="add"> Add</a>
+
+                         
+                                <!-- Post -->
+                               
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xl-6">
+                            <a class="page-btn" href="profile.html" [routerLink]="[routesConfig.routes.uploadresume.resumeprofile]">
+                                <img src="../../../../../assets/img/icon-back.png" alt="Back">
+                                Back
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xl-6 txt-align-right" >
+                            <button type="submit" (click)="doSubmit()" [disabled]="f2.form.invalid || employemnthistory.length === 0" class="page-btn" href="education.html" >
+                                Next
+                                <img back="" src="../../../../../assets/img/icon-next.png" alt="Next">
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>

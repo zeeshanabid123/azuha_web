@@ -1,0 +1,81 @@
+
+<div id="about-carousle" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <!-- Item -->
+        <div class="carousel-item active carousel-item-next carousel-item-left">
+            <div class="row">
+                <!-- Small Post -->
+                <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let slide of GalleryModel">
+                    <a href="about-gallery.html" class="small-post empty">
+                        <div class="img-pnl"  >
+                        </div>
+                        <div class="txt-pnl">
+                            <p>Our Campus</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Small Post -->
+                <!-- Small Post -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="about-gallery.html" class="small-post empty">
+                        <div class="img-pnl">
+                            <img src="img/small-post-9.png" alt="Post">
+                        </div>
+                        <div class="txt-pnl">
+                            <p>FunFair</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Small Post -->
+                <!-- Small Post -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="about-gallery.html" class="small-post empty">
+                        <div class="img-pnl" style="background-image: url(img/small-post-8.png);">
+                        </div>
+                        <div class="txt-pnl">
+                            <p>Summer Camp</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Small Post -->
+                <!-- Small Post -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="about-gallery.html" class="small-post empty">
+                        <div class="img-pnl" style="background-image: url(img/small-post-6.png);">
+                        </div>
+                        <div class="txt-pnl">
+                            <p>Takmeel e Bikhari Shareef</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Small Post -->
+            </div>
+        </div>
+        <!-- Item -->
+    
+    </div>
+    <a class="carousel-control-prev" href="#about-carousle" role="button" data-slide="prev">
+        <i class="fa fa-arrow-left"></i>
+    </a>
+    <a class="carousel-control-next" href="#about-carousle" role="button" data-slide="next">
+        <i class="fa fa-arrow-right"></i>
+    </a>
+</div>
+   
+   
+   
+   <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+    (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+    (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+    <ng-container *ngFor="let slide of GalleryModel">
+        <div ngxSlickItem 
+             class="slide"
+            ><img src="{{ baseUrl+''+slide.galleryImagesmodel[0].galleryImageUrl }}"
+                alt="{{ slide.name }}" />
+                <div class="txt-pnl">
+                    <p>{{ slide.name }}</p>
+                </div>
+                </div>
+
+    </ng-container>
+</ngx-slick-carousel> -->

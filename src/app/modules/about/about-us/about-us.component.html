@@ -1,0 +1,46 @@
+<header id="small-header" class="mr-top" style="background-image: url(../../../../assets/img/bg-bg.png);">
+    <div class="text">
+        <h1>About</h1>
+        <p>Azzuha Islamic Institute</p>
+    </div>
+</header>
+<section id="about-page" class="container-fluid inner-page">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+            <div [innerHtml]="aboutUs.text"></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                    <h2>Institute Gallery</h2>
+                
+<div id="about-carousle" class="carousel slide" data-ride="carousel"  data-ride="carousel" test>
+    <carousel [objectFit]="'none'"
+    [cellWidth]="'50%'"
+    [height]="'50%'" >
+        <div class="row">
+            <!-- Small Post -->
+            <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let slide of GalleryModel">
+                <a href="about-gallery.html" class="small-post empty">
+                    <div class="img-pnl"  [ngStyle]="{'background-image': 'url(' +  baseUrl+''+slide.galleryImagesmodel[0].galleryImageUrl + ')'}">
+                    </div>
+                    <div class="txt-pnl">
+                        <p>Our Campus</p>
+                    </div>
+                </a>
+            </div>
+            <!-- Small Post -->
+            <!-- Small Post -->
+        
+        </div>
+       
+       
+    </carousel>
+    
+</div>
+   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

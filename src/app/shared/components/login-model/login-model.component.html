@@ -1,0 +1,177 @@
+
+       <div class="modal-body sign-up-modal">
+        <button type="button" class="close" (click)="close()" data-dismiss="modal" aria-label="Close">
+            <img src="../../../../../assets/img/icon-close.png" alt="Close">
+        </button>
+     
+        <tabset #tabset>
+            <tab heading="Sign Up" >
+            <div class="txt-pnl">
+                <div class="txt-pnl-inner"  *ngIf="showSignForm">
+                    <form  (ngSubmit)="s.valid && onSubmit()"  [formGroup]="RegisterForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input style="background-image: url(../../../../../assets/img/icon-user.png);" type="text"
+                                    class="fullname form-control" autocomplete="off" formControlName="userName"
+                                    placeholder="Your user name *">
+
+                                    <div *ngIf="s.userName.invalid && (s.userName.dirty || s.userName.touched)"
+                                    class="animated fadeIn text-danger empty-error-field">
+                                    <small>
+                                        <div *ngIf="s.userName?.errors.required && false">
+                                            Field is required.
+                                        </div>
+                                        <div *ngIf="s.userName?.errors.pattern">
+                                            Not a valid userName.
+                                        </div>
+                                        <!-- <div *ngIf="f.form.controls['email']?.errors.minlength">
+                                            Field minimum length should be 3.
+                                        </div>
+                                        <div *ngIf="f.form.controls['email']?.errors.maxlength">
+                                            Field maximum length should be 50.
+                                        </div> -->
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input style="background-image: url(../../../../../assets/img/icon-email.png);"
+                                    type="email" class="email-input form-control" autocomplete="off"
+                                    placeholder="Email *" formControlName="email">
+
+                                    <div *ngIf="s.email.invalid && (s.email.dirty || s.email.touched)"
+                                    class="animated fadeIn text-danger empty-error-field">
+                                    <small>
+                                        <div *ngIf="s.email?.errors.required && false">
+                                            Field is required.
+                                        </div>
+                                        <div *ngIf="s.email?.errors.pattern">
+                                            Not a valid email.
+                                        </div>
+                                        <!-- <div *ngIf="f.form.controls['email']?.errors.minlength">
+                                            Field minimum length should be 3.
+                                        </div>
+                                        <div *ngIf="f.form.controls['email']?.errors.maxlength">
+                                            Field maximum length should be 50.
+                                        </div> -->
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="full-div password-pnl">
+                                    <input style="background-image: url(../../../../../assets/img/icon-password.png);"
+                                        type="password" class="password-input form-control"
+                                        autocomplete="off" placeholder="Password *" [type]="hide ? 'password' : 'text'" formControlName="password">
+                                    <button (click)="myFunction()">
+                                        show
+                                    </button>
+
+                                    <div *ngIf="s.password.invalid && (s.password.dirty || s.password.touched)"
+                                    class="animated fadeIn text-danger empty-error-field">
+                                    <small>
+                                        <div *ngIf="s.password?.errors.required && false">
+                                            Field is required.
+                                        </div>
+                                        <div *ngIf="s.password?.errors.pattern">
+                                            Not a valid password.
+                                        </div>
+                                        <!-- <div *ngIf="f.form.controls['email']?.errors.minlength">
+                                            Field minimum length should be 3.
+                                        </div>
+                                        <div *ngIf="f.form.controls['email']?.errors.maxlength">
+                                            Field maximum length should be 50.
+                                        </div> -->
+                                    </small>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button (click)="onSubmit()" [disabled]="s.invalid"  class="reg-btn blue">Create Account</button>
+                    </form>
+                    <p>
+                        By continuing you agree to our <a href="terms-and-conditions.html">Terms and
+                            Conditions</a> and <a href="privacy-policy.html">Privacy Policy.</a>
+                    </p>
+
+                </div>
+
+                <div class="modal-body sign-in-modal" *ngIf="!showSignForm">
+                   
+                    <h2>Create a free account to continue</h2>
+                    <a class="google-btn" href="javascript:void(0);" (click)="externalLogin()"
+                        style="background-image: url(../../../../assets/img/google-account.png);">Sign in with Google</a>
+                    <p><i>- or -</i></p>
+                    <a class="reg-btn green" (click)="showcutomSignForm()" href="javascript:void(0);">Sign up with Email</a>
+                    <p>
+                        By continuing, you agree to our
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        and
+                        <a href="terms-and-conditions.html">Terms.</a>
+                    </p>
+                </div>
+            </div>
+            </tab>
+            <tab heading="Have an account? Sign
+            in">
+                <div class="txt-pnl">
+                    <div class="txt-pnl-inner">
+                        <form (ngSubmit)="f.valid && OnLoginSubmit()"  [formGroup]="loginForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="text" style="background-image: url(../../../../../assets/img//icon-user.png);"
+                                        class="fullname form-control" formControlName="userName" autocomplete="off"
+                                        placeholder="Your user name *">
+                                            <div *ngIf="f.userName.invalid && (f.userName.dirty || f.userName.touched)"
+                                            class="animated fadeIn text-danger empty-error-field">
+                                            <small>
+                                                <div *ngIf="f.userName?.errors.required && false">
+                                                    Field is required.
+                                                </div>
+                                                <div *ngIf="f.userName?.errors.pattern">
+                                                    Not a valid userName.
+                                                </div>
+                                                <!-- <div *ngIf="f.form.controls['email']?.errors.minlength">
+                                                    Field minimum length should be 3.
+                                                </div>
+                                                <div *ngIf="f.form.controls['email']?.errors.maxlength">
+                                                    Field maximum length should be 50.
+                                                </div> -->
+                                            </small>
+                                        </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="full-div password-pnl">
+                                        <input type="text"
+                                            style="background-image: url(../../../../../assets/img/icon-password.png);"
+                                            class="password-input form-control" [type]="hide ? 'password' : 'text'"  name="Password" type="password" formControlName="password" autocomplete="off"
+                                            placeholder="Password *">
+                                        <button (click)="myFunction()">
+                                            show
+                                        </button>
+                                       
+                                            <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)"
+                                            class="animated fadeIn text-danger empty-error-field">
+                                            <small>
+                                                <div *ngIf="f.password?.errors.required && false">
+                                                    Field is required.
+                                                </div>
+                                               
+                                                <div *ngIf="f.password?.errors.pattern">
+                                                    Password not Valid.
+                                                </div>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button (click)="OnLoginSubmit()" class="reg-btn blue">Log In</button>
+                        </form>
+                    </div>
+                    <div class="forget-btn">
+                        <a data-toggle="modal" data-target="#forget-password-modal"
+                            href="javascript:void(0);">Forgot your password?</a>
+                    </div>
+                </div>
+            </tab>
+          </tabset>
+      
+    </div>

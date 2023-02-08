@@ -1,0 +1,192 @@
+<!-- Header Starts Here 
+    ======================= -->
+    <header class="container-fluid" style="background-image: url(https://cf-simple-s3-origin-isolategym-s3-cf-939946006481.s3.amazonaws.com/img/header-bg.jpg);">
+        <div class="bg-layer"></div>
+        <div class="table-cell">
+            <div class="table-cell-center">
+                <div class="container">
+                    <h1>Contact </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Ends Here 
+    ===================== -->
+
+    <!-- Content Starts Here 
+    ======================== -->
+    <div id="contact-page" class="content-page container-fluid">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-6 col-sm-12">
+                        <div class="txt-pnl">
+                            <h2>Get In Touch</h2>
+                            <p>We'd love to hear about your concerns and help you get started</p>
+                            <ul class="support-info-list">
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-map-marker"></i>
+                                    </div>
+                                    <div class="txt">
+                                        <h3>Address</h3>
+                                        <p><b>776 Fulham Rd</b></p>
+                                        <p style="color:#8B8B8B;">
+                                            Fulham, London, SW6 5RX, United Kigdom
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div class="txt">
+                                        <h3>Support Person</h3>
+                                        <ul class="support-call-list">
+                                            <li>
+                                                <a href="tel:07917457478">
+                                                    07917457478
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="tel:07947648362">
+                                                    07947648362
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="txt">
+                                        <h3>Online Support</h3>
+                                        <a href="mailto:info@isolategym.co.uk">info@isolategym.co.uk </a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <h2>Opening Hours</h2>
+                            <p>Monday - Sunday 6am - 12am</p>
+                            <p>Peak Hours 7am – 10am & 5pm - 8pm</p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-sm-12">
+                        <div class="contact-form-cntnr">
+                            <form (ngSubmit)="f.form.valid" #f="ngForm"  [formGroup]="conatctUsForm" novalidate>
+                                <div class="row">
+                                    <div class="col-lg-12 col-sm-12 col-md-12">
+                                        <label for="first-name">Full Name
+                                            <div
+                                            *ngIf="f.form.controls['name'].invalid && (f.form.controls['name'].dirty || f.form.controls['name'].touched)"
+                                            class="animated fadeIn text-danger empty-error-field">
+                                            <small>
+                                                <div *ngIf="f.form.controls['name']?.errors.required && false">
+                                                    Field is required.
+                                                </div>
+                                                <div *ngIf="f.form.controls['name']?.errors.minlength">
+                                                    Field minimum length should be 3.
+                                                </div>
+                                                <div *ngIf="f.form.controls['name']?.errors.maxlength">
+                                                    Field maximum length should be 50.
+                                                </div>
+                                            </small>
+                                        </div>
+
+                                        </label>
+                                        <input class=" form-control" formControlName="name" id="name" autocomplete="off"
+                                        type="text" placeholder="Full name" minlength="3" maxlength="50" required>
+                                    </div>
+                                    <div class="col-lg-12 col-sm-12 col-md-12">
+                                        <label for="email">Email Address
+                                            <div *ngIf="f.form.controls['email'].invalid && (f.form.controls['email'].dirty || f.form.controls['email'].touched)"
+                                            class="animated fadeIn text-danger empty-error-field">
+                                            <small>
+                                                <div *ngIf="f.form.controls['email']?.errors.required && false">
+                                                    Field is required.
+                                                </div>
+                                                <div *ngIf="f.form.controls['email']?.errors.pattern">
+                                                    Not a valid Email.
+                                                </div>
+                                                <div *ngIf="f.form.controls['email']?.errors.minlength">
+                                                    Field minimum length should be 3.
+                                                </div>
+                                                <div *ngIf="f.form.controls['email']?.errors.maxlength">
+                                                    Field maximum length should be 50.
+                                                </div>
+                                            </small>
+                                        </div>
+
+                                        </label>
+                                        <input class="form-control" formControlName="email" id="emailaddress"
+                                            autocomplete="off" type="email" placeholder="Email address"
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" minlength="3"
+                                            maxlength="50" required>
+                                    </div>
+                                    <div class="col-lg-12 col-sm-12 col-md-12 phone-number-contianer">
+                                        <label for="phone-number" style="text-align: left;">Phone Number
+
+                                            <div *ngIf="f.form.controls['phone'].invalid && f.form.controls['phone'].value !== null && (f.form.controls['phone'].dirty || f.form.controls['phone'].touched)"
+                                            class="animated fadeIn text-danger empty-error-field">
+                                            <small>
+                                                <div *ngIf="f.form.controls['phone']?.errors.required && false">
+                                                    Field is required.
+                                                </div>
+                                                <div *ngIf="f.form.controls['phone']?.invalid">
+                                                    Number not valid.
+                                                </div>
+                                                <div *ngIf="f.form.controls['phone']?.errors.minlength">
+                                                    Field minimum length should be 3.
+                                                </div>
+                                                <div *ngIf="f.form.controls['phone']?.errors.maxlength">
+                                                    Field maximum length should be 50.
+                                                </div>
+                                            </small>
+                                        </div>
+                                        </label>
+                                        <ngx-intl-tel-input [inputId]="'adsasd'" [cssClass]="'form-control'"
+                                        [preferredCountries]="preferredCountries" [enablePlaceholder]="true"
+                                        [searchCountryFlag]="true"
+                                        [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                                        [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.UnitedKingdom"
+                                        [enableAutoCountrySelect]="true" [maxLength]="15"
+                                        [tooltipField]="TooltipLabel.Name" [phoneValidation]="true"
+                                        [separateDialCode]="true" formControlName="phone">
+                                    </ngx-intl-tel-input>
+                                    </div>
+                                    <div class="col-lg-12 col-sm-12 col-md-12">
+                                        <label for="Message">Description
+                                            <div *ngIf="f.form.controls['description'].invalid && f.form.controls['description'].value !== null && (f.form.controls['phone'].dirty || f.form.controls['phone'].touched)"
+                                            class="animated fadeIn text-danger empty-error-field">
+                                            <small>
+                                                <div *ngIf="f.form.controls['description']?.errors.required && false">
+                                                    Field is required.
+                                                </div>
+                                                <div *ngIf="f.form.controls['description']?.invalid">
+                                                    Number not valid.
+                                                </div>
+                                                <div *ngIf="f.form.controls['description']?.errors.minlength">
+                                                    Field minimum length should be 3.
+                                                </div>
+                                                <div *ngIf="f.form.controls['description']?.errors.maxlength">
+                                                    Field maximum length should be 50.
+                                                </div>
+                                            </small>
+                                        </div>    
+                                        </label>
+                                        <textarea class="form-control" formControlName="description" id="description" placeholder="Enter Message.."></textarea>
+                                    </div>
+                                    <div class="col-lg-12 col-sm-12 col-md-12">
+                                        <input type="submit" class="submit-btn reg-btn-small dark-grey" id="submit" (click)="onSubmit()" [disabled]="f.form.invalid" value="Submit">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content Ends Here 
+    ====================== -->  

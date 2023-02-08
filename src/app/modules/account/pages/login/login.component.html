@@ -1,0 +1,142 @@
+
+
+
+    <!-- Login Starts Here 
+    ====================== -->
+    <div id="login" class="content-page container-fluid">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <!-- Text Panel -->
+                    <div class="col-md-6 col-sm-12 col-lg-8">
+                        <div class="txt-pnl">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <h2>Welcome Back!</h2>
+                                    <p>Login to access your profile and schedule your training </p>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <form (ngSubmit)="f.valid && onSubmit()"  [formGroup]="loginForm" novalidate>
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 col-lg-7">
+                                                <label for="user-email">Email
+                                                    <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)"
+                                                    class="animated fadeIn text-danger empty-error-field">
+                                                    <small>
+                                                        <div *ngIf="f.email?.errors.required && false">
+                                                            Field is required.
+                                                        </div>
+                                                        <div *ngIf="f.email?.errors.pattern">
+                                                            Not a valid Email.
+                                                        </div>
+                                                        <!-- <div *ngIf="f.form.controls['email']?.errors.minlength">
+                                                            Field minimum length should be 3.
+                                                        </div>
+                                                        <div *ngIf="f.form.controls['email']?.errors.maxlength">
+                                                            Field maximum length should be 50.
+                                                        </div> -->
+                                                    </small>
+                                                </div>
+                                                </label>
+                                                <input id="user-email" name="user-email" placeholder="email address" type="email" class="form-control" formControlName="email"
+                                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" minlength="3"
+                                                maxlength="50" required>
+                                                <label for="Password" *ngIf="!isReseting">Password
+                                                    <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)"
+                                                    class="animated fadeIn text-danger empty-error-field">
+                                                    <small>
+                                                        <div *ngIf="f.password?.errors.required && false">
+                                                            Field is required.
+                                                        </div>
+                                                       
+                                                        <div *ngIf="f.password?.errors.pattern">
+                                                            Password not Valid.
+                                                        </div>
+                                                    </small>
+                                                </div>
+                                                </label>
+                                                <input id="Password" *ngIf="!isReseting" name="Password" type="password" formControlName="password" class="form-control"
+                                                autocomplete="off" placeholder="Password" minlength="6"
+                                                maxlength="50">
+                                                <div class="full-div">
+                                                    <label *ngIf="!isReseting" class="check-box-box">Remember Me
+                                                        <input type="checkbox">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                    <!-- <a *ngIf="!isReseting" (click)="onClickResetPassword()" class="reset-password">Reset Password</a> -->
+                                                    <a *ngIf="isReseting" (click)="onClickLoginInstead()" class="forget-btn">Login Instead</a>
+                                                    <a class="forget-btn" data-toggle="modal" *ngIf="!isReseting" (click)="onClickResetPassword()" data-target="#forgot-passwordmodal"
+                                                        href="javascript:void(0);">Forgot Password?</a>
+                                                </div>
+                                                <!-- <input type="submit" class="submit-btn reg-btn-small dark-grey" value="Log In"> -->
+                                               
+                                                <input *ngIf="!isResetEmailSent" type="submit" id="submit" class="reg-btn-small dark-grey"  value="{{isReseting ? 'Send Reset Instructions': 'Log In'}}">
+                                                <span *ngIf="isResetEmailSent">Please check your inbox for Email.</span>
+                                                <!-- <a class="reg-btn-small dark-grey" href="javascript:void(0);" data-toggle="modal" data-target="#successfull-modal">Log In</a>
+                                                <a class="reg-btn-small dark-grey" href="javascript:void(0);" data-toggle="modal" data-target="#alert-box-modal">Log In</a> 
+                                                <a class="reg-btn-small dark-grey" href="javascript:void(0);" data-toggle="modal" data-target="#payout-mehode-modal">Log In</a>   -->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <div class="dnt-hv-account-pnl">
+                                        <p>Don't have an account?  <a href="signup.html" [routerLink]="[routesConfig.routes.isoProfileSignUp.step1]">Register Now</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text Panel -->
+                    <!-- <div class="col-md-12 col-sm-12 col-lg-4 display-div"></div> -->
+                    <!-- List Panel -->
+                    <div class="col-md-6 col-sm-8 col-lg-4">
+                        <div class="login-info-cntnr">
+                            <ul class="info-list">
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <p>You can rent a room per hour and deliver a great personal service to your client.
+                                    </p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <p>Our Rooms are filled with all the equipment you will need to deliver a great
+                                        service to your client.</p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <p>Train in Private Rooms and Train Safely. Pay as you go or book in bulk and get a
+                                        cheaper rate. </p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <p>Cancel 24 hours before the session and you will not be charged. </p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <p>We offer peak and off-peak session. Open from 6am to 12am 7 days a week Clean
+                                        changing Rooms and Toilets. </p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <p>QR code entry. </p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <p>Vending Machine available with beverages for your clients to Hydrate. </p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <p>Come try out our new PT rooms first hour is FREE of charge for all new Personal
+                                        Trainers. </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- List Panel -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Ends Here 
+    ==================== -->

@@ -1,0 +1,141 @@
+<header id="small-header" class="mr-top" style="background-image: url(../../../../assets/img/bg-bg.png);">
+    <div class="text">
+        <h1>Video</h1>
+        <p>Azzuha Islamic Institute</p>
+    </div>
+</header>
+
+<section id="audio-video-page" class="container-fluid inner-page">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <!-- Selection Panel -->
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="side-bar">
+                        <div class="side-head">
+                            <h4>Video Categories</h4>
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <p><i class="fa fa-angle-right"></i> Bayanat</p>
+                                        <span>41</span>
+                                    </button>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul class="accordian-list">
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <p><i class="fa fa-angle-right"></i> Courses</p>
+                                        <span>24</span>
+                                    </button>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul class="accordian-list">
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <p><i class="fa fa-angle-right"></i> Workshops</p>
+                                        <span>224</span>
+                                    </button>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul class="accordian-list">
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingfour">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                                        <p><i class="fa fa-angle-right"></i>  Quran</p>
+                                        <span>786</span>
+                                    </button>
+                                </div>
+                                <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul class="accordian-list">
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                            <li><a href="audio-details.html">Tarjama Tafseer-ul-Quran</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Selection Panel -->
+                <div class="col-lg-9 col-md-8 col-sm-12">
+                    <div class="row">
+                        <!-- Simple Post-->
+                        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let m of MediaModel">
+                            <a href="audio-details.html" [routerLink]="['/media/media-detail'+ '/' + m.id+ '/' +'video']" class="small-post empty mid" >
+                                <div class="img-pnl">
+                                    <img src="../../../../assets/img/bg.png" alt="img">
+                                </div>
+                                <div class="txt-pnl">
+                                    <p>{{m.mediaTypeName}}</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Simple Post-->
+                       
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="brdr"></div>
+                            <!-- Pagination -->
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0);" aria-label="Previous">
+                                        <span aria-hidden="true">«</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">6</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0);" aria-label="Next">
+                                        <span aria-hidden="true">»</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- Pagination -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

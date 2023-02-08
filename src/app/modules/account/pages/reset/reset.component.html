@@ -1,0 +1,46 @@
+<!-- Content Starts Here 
+    ======================= -->
+<div id="user-login" class="reset-password inner-content container-fluid">
+    <div class="user-bg-left"><img src="../../../../../assets/img/log-in-bg-1.png" alt="log in bg"></div>
+    <div class="user-bg-right"><img src="../../../../../assets/img/log-in-bg-2.png" alt="log in bg"></div>
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-12 col-lg-4"></div>
+                <div class="col-md-8 col-sm-12 col-lg-4 txt-container">
+                    <h1>Reset Password</h1>
+                    <form name="f" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                        <input class="form-control password-input" name="new-password" id="new-password"
+                            autocomplete="off" type="password" placeholder="New Password"
+                            [(ngModel)]="resetPasswordRequest.newPassword" #password="ngModel" required>
+                        <input class="form-control password-input" name="confirm-password" id="confirm-password"
+                            autocomplete="off" type="password" placeholder="Confirm Password"
+                            [(ngModel)]="resetPasswordRequest.confirmPassword" #confirmPassword="ngModel"
+                            ngValidateEqual="new-password" required>
+                        <div *ngIf="(confirmPassword.dirty || confirmPassword.touched) && (password.dirty || password.touched)"
+                            class="animated fadeIn text-danger empty-error-field">
+                            <small>
+                                <div class="warning-text"
+                                    *ngIf="resetPasswordRequest.newPassword !== resetPasswordRequest.confirmPassword">
+                                    Passwords Don't Match
+                                </div>
+                            </small>
+                        </div>
+                        <input type="submit" [disabled]="f.form.invalid" class="reg-btn-small green-trans"
+                            value="Save Password">
+                        <div class="full-div">
+                            <p><b>OR</b></p>
+                        </div>
+                        <div class="full-div">
+                            <a class="reg-btn-small green-trans login-again"
+                                [routerLink]="[routesConfig.routes.account.login]">Log in</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content Ends Here 
+    ====================== -->

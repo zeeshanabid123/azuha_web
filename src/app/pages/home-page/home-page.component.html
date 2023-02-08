@@ -1,0 +1,254 @@
+
+
+   <!-- Landing Header Starts Here
+=============================== -->
+<header id="landing-carousle" class="carousel slide" data-ride="carousel" test>
+    <carousel [objectFit]="'cover'"
+    [cellWidth]="'100%'"
+    [height]="'100%'"
+    [autoplay]="true"
+    [loop]="true">
+   
+        <ng-container  *ngFor="let c of sliderModel">
+            <div class="carousel-cell">
+            <div class="bg-layer" [ngStyle]="{'background-image': 'url(' +  baseUrl+''+c.imageUrl + ')'}" style="background-image: url(../../../assets/img/bg-1.jpg);"></div>
+            <div class="txt-pnl">
+                <h1>
+                    <span> {{c.heading}}</span>
+                   {{c.subHeading}}
+                </h1>
+            </div>
+        </div>
+          </ng-container>
+    </carousel>
+    <!-- <ol class="carousel-indicators">
+        <li data-target="#landing-carousle"  data-slide-to="0" class="active"></li>
+        <li data-target="#landing-carousle" data-slide-to="1"></li>
+        <li data-target="#landing-carousle" data-slide-to="2"></li>
+        <li data-target="#landing-carousle" data-slide-to="3"></li>
+        <li data-target="#landing-carousle" data-slide-to="4"></li>
+    </ol> -->
+    <div class="bottom-mouse">
+        <div class="mouse"><img src="../../../assets/img/mouse.png" alt="Mouse"></div>
+    </div>
+    
+</header>
+<!-- Landing Header Ends Here
+=============================== -->
+
+
+<!-- Landing Content Panel 
+========================== -->
+<section class="container-fluid landing-content">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h2>Welcome to Az-Zuhaa Islamic Institute</h2>
+                    <p>Spreading Peace with the light of Islam</p>
+                </div>
+                <!-- Live Listen -->
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="listen-live-pnl">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <h2>Listen Live Ilmi Bayan</h2>
+                                <p>Al-Qur'an Tadabbur Wa 'Amal by Dr. Farhat
+                                    Hashmi- Recordings Uploaded</p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <img src="../../../assets/img/audio-img.png" alt="audio">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Live Listen -->
+                <!-- Promo Banner -->
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="promo-banner" style="background-image: url(../../../assets/img/banner-promo-1.png);"></div>
+                </div>
+                <!-- Promo Banner -->
+                <!-- Get Admission -->
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="get-admission-pnl" style="background-image: url(../../../assets/img/banner-promo-2.png);">
+                        <div class="get-admission-pnl-inner">
+                            <span>1</span>
+                            <div class="txt-pnl">
+                                <h2>Year Diploma</h2>
+                                in islamic Education
+                            </div>
+                            <a [routerLink]="['/courses/admision-step1/33cc5316-49ed-4865-a0b0-b850d8840061']">Get Admission</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Get Admission -->
+            </div>
+            <!-- Small Post Panel -->
+            <div class="row">
+                <!-- Small Post -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="small-post">
+                        <div class="img-pnl">
+                            <img src="../../../assets/img/small-post-1.png" alt="post">
+                        </div>
+                        <div class="txt-pnl">
+                            <p>Degree Program</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Small Post -->
+                <!-- Small Post -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="javascript:void(0);" class="small-post">
+                        <div class="img-pnl" style="background-image: url(../../../assets/img/small-post-2.png);"></div>
+                        <div class="txt-pnl">
+                            <p>Courses</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Small Post -->
+                <!-- Small Post -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="javascript:void(0);" class="small-post">
+                        <div class="img-pnl">
+                            <img src="../../../assets/img/small-post-3.png" alt="post">
+                        </div>
+                        <div class="txt-pnl">
+                            <p>Media</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Small Post -->
+                <!-- Small Post -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="small-post">
+                        <div class="img-pnl" style="background-image: url(../../../assets/img/small-post-4.png);"></div>
+                        <div class="txt-pnl">
+                            <p>Social Welfare</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Small Post -->
+            </div>
+            <!-- Small Post Panel -->
+
+            <!-- ================= Our Courses =================== -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h2>Our Courses</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <!-- Courses Carousile-->
+                    <div id="courses-carousle" class="carousel slide" data-ride="carousel" test>
+                        <carousel [objectFit]="'none'"
+                        [cellWidth]="'50%'"
+                        [height]="'50%'" >
+                            <div class="row">
+                                <!-- Small Post -->
+                                <div class="col-lg-3 col-md-6 col-sm-12"  *ngFor="let c of CoursesModel">
+                                  
+                                        <div class="small-post crs-pnl">
+                                            <div class="img-pnl" [ngStyle]="{'background-image': 'url(' +  baseUrl+''+c.courseImage + ')'}"
+                                               >
+                                                <div class="span-cntnr">
+                                                    <div class="span-cntnr">
+                                                        <span>Duration {{c.courseDuration}} Month</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="txt-pnl">
+                                                <p>{{c.courseName}}</p>
+                                                <a class="reg-btn sky" [routerLink]="['courses/admision-step1',c.id]">Get Admission</a>
+                                            </div>
+                                        </div>
+                                    
+                                  
+                                </div>
+                                <!-- Small Post -->
+                                <!-- Small Post -->
+                            
+                            </div>
+                           
+                           
+                        </carousel>
+                        
+                    </div>
+                    <!-- Courses Carousile-->
+                </div>
+            </div>
+            <!-- ================= Our Courses =================== -->
+
+            <!-- ================= News & Updates =================== -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h2>News & Updates</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <!-- Today -->
+                    <div [innerHtml]="aboutUs.text"></div>
+                    <!-- Today -->
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <!-- Listen Live -->
+                    <div class="listenlive-quran" style="background-image: url(../../../assets/img/live-bg.png);">
+                        <h4> Listen Live</h4>
+                        <h1>QURAN UL KAREEM</h1>
+                        <audio src="http://58.65.171.102:8004/stream?type=http&nocache=4" controls></audio>
+                        <p>
+                            Download Quran UL Kareem
+                            Playlist Listen.pls - 25 kb
+                        </p>
+                    </div>
+                    <!-- Listen Live -->
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <!-- Subscribe Panel -->
+                    <div class="full-div flex-div subscrib-pnl"
+                        style="background-image: url(../../../assets/img/subscribe-bg.png);">
+                        <div class="lft-pnl">
+                            <h2>Subscribe Now </h2>
+                            <p>for latest news & important updates</p>
+                        </div>
+                        <div class="rght-pnl">
+                            <form>
+                                <div class="inner-left">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <label for="Email">Enter Email Address</label>
+                                            <input type="email" class="form-control" autocomplete="off"
+                                                placeholder="Email Address">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <label for="Email">Enter Phone Number</label>
+                                            <input type="text" class="form-control" autocomplete="off"
+                                                placeholder="+92321000000">
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label" for="exampleCheck1">I have read and
+                                                agree to
+                                                the <a href="terms-conditions.html">Terms & Conditions</a></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inner-right">
+                                    <input type="submit" class="reg-btn sky fill" autocomplete="off"
+                                        value="Subscribe">
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Subscribe Panel -->
+                </div>
+            </div>
+            <!-- ================= News & Updates =================== -->
+        </div>
+    </div>
+</section>
+<!-- Landing Content Panel 
+========================== -->

@@ -1,0 +1,52 @@
+<header id="small-header" class="mr-top" style="background-image: url(../../../../assets/img/bg-bg.png);">
+    <div class="text">
+        <h1>Degree Program</h1>
+        <p>Azzuha Islamic Institute</p>
+    </div>
+</header>
+
+<section id="degree-program-page" class="container-fluid inner-page">
+    <div class="row">
+       
+        <div class="container" >
+          
+            <div *ngFor="let item of degreeeJson.degressProgram">
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h2>{{item.topHeading}}</h2>
+                        <p>
+                           {{item.topSubheading}}
+                        </p>
+                        <h3>{{item.secondTopHeading}}</h3>
+                        <p>
+                           {{item.secondTopSubHeading}}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Degree Details Panel -->
+                    <div class="col-lg-6 col-md-6 col-sm-12" *ngFor="let item2 of item.subjects">
+                        <div class="degree-detail-pnl">
+                            <div class="degree-head">
+                                <h4>Subject</h4>
+                                <a class="reg-btn sky fill" href="javascript:void(0);" [innerHtml]="item2.year"></a>
+                            </div>
+                            <div class="degree-body">
+                                <ul class="category-list">
+                                    <li *ngFor="let item3 of item2.studysubjects">
+                                        {{item3}}
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Degree Details Panel -->
+               
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</section>

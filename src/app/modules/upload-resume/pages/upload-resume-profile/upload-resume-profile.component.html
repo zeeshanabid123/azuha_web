@@ -1,0 +1,164 @@
+<section id="profile-page" class="component-page container-fluid">
+    <div class="row">
+        <div class="general-div">
+            <div class="row">
+                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+                    <h1>Score Components</h1>
+                </div>
+                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 txt-right">
+                    <div class="nav-search">
+                        <input class="form-control" type="search" placeholder="" aria-label="Search">
+                        <button type="submit"><img src="../../../../../assets/img/icon-search-blue.png" alt="search Icon"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-div">
+                <div class="component-intro">
+                    <div class="txt-pnl">
+                        <div class="table-cell">
+                            <div class="table-cell-center">
+                                <h2>Profile</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-pnl">
+                        <img src="../../../../../assets/img/profile.png" alt="Profile">
+                    </div>
+                </div>
+                <div class="coil-md-12 col-lg-12 col-sm-12 col-xl-12">
+                    <form name="templateform" class="form-container" (ngSubmit)="f.form.valid" #f="ngForm"
+                    [formGroup]="phoneForm" novalidate>
+                        <div class="row">
+                            <div class=" col-md-12 col-sm-12 col-xl-9 col-lg-9">
+                                <div class="row">
+                                    <div class="col-lg-2 col-sm-12 col-md-3 col-xl-2">
+                                        <label>
+                                            Title <span>*</span>
+                                        </label>
+                                        <select class="form-control" formControlName="titlename" id="titlename">
+                                            <option value="Mr">Mr</option>
+                                            <option value="Mrs">Mrs</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-12 col-md-9 col-xl-4">
+                                        <label>
+                                            First Name <span>*</span>
+                                        </label>
+                                        <input type="text" formControlName="firstname" id="firstname" class="form-control" placeholder="" autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6 col-xl-3">
+                                        <label>
+                                            Middle Name <span>*</span>
+                                        </label>
+                                        <input type="text" formControlName="middlename" id="middlename" class="form-control" placeholder="" autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6 col-xl-3">
+                                        <label>
+                                            Last Name <span>*</span>
+                                        </label>
+                                        <input type="text" formControlName="lastname" id="lastname" class="form-control" placeholder="" autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6 col-xl-3">
+                                        <label>
+                                            Email <span>*</span>
+                                        </label>
+                                        <input type="email" formControlName="email" id="emailaddress" class="form-control" placeholder="" autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6 col-xl-3">
+                                        <label>
+                                            Mobile Number <span>*</span>
+                                        </label>
+                                        <input type="text" formControlName="mobilenumber" id="mobilenumber" class="form-control" placeholder="" autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6 col-xl-3">
+                                        <label>
+                                            Home Country Phone Number
+                                        </label>
+                                        <input type="text" formControlName="homephonenumber" id="homephonenumber" class="form-control" placeholder="" autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6 col-xl-3">
+                                        <label>
+                                            Alternate Contact Number
+                                        </label>
+                                        <input type="text" formControlName="alternatephonenumber" id="alternatephonenumber" class="form-control" placeholder="" autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-12 col-sm-12 col-md-12 col-xl-12">
+                                        <label>
+                                            Address <span>*</span>
+                                        </label>
+                                        <input type="text" formControlName="addressline1" id="addressline1" class="form-control" placeholder="Line 1" autocomplete="off">
+                                        <input type="text" formControlName="addressline2" id="addressline2" class="form-control" placeholder="Line 2" autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6 col-xl-3">
+                                        <label>
+                                            City <span>*</span>
+                                        </label>
+                                        <input type="text" formControlName="cityname" id="cityname" class="form-control" placeholder="" autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6 col-xl-3">
+                                        <label>
+                                            State / Province
+                                        </label>
+                                        <input type="text" formControlName="statename" id="statename" class="form-control" placeholder="" autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6 col-xl-3">
+                                        <label>
+                                            Postal Code
+                                        </label>
+                                        <input type="text" formControlName="postalcode" id="postalcode" class="form-control" placeholder="" autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6 col-xl-3">
+                                        <label>
+                                            Home Country  <span>*</span>
+                                        </label>
+                                        <select class="form-control" formControlName="homecountry" id="homecountry">
+                                            <option>Country</option>
+                                            <option value="1">Pakistan</option>
+                                            <option value="2">Turkey</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6 col-xl-3">
+                                        <label>
+                                            Nationality <span>*</span>
+                                        </label>
+                                        <select class="form-control" formControlName="nationality" id="nationality">
+                                            <option>Nationality</option>
+                                            <option value="1">Pakistani</option>
+                                            <option value="2">Turkish</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6 col-xl-3">
+                                        <label>
+                                            Country of Residence  <span>*</span>
+                                        </label>
+                                        <select class="form-control" formControlName="countryresidence" id="countryresidence">
+                                            <option>Country of Residence</option>
+                                            <option value="1">Pakistan</option>
+                                            <option value="2">Turkey</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-md-12 col-sm-12 col-xl-3 col-lg-3">
+                                <textarea class="form-control" placeholder="Resumé Summary " formControlName="bio" id="bio"></textarea>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-sm-6 col-xl-6">
+                                <a class="page-btn" href="see-preview.html" [routerLink]="[routesConfig.routes.uploadresume.previewprofile]">
+                                    <img src="../../../../../assets/img/icon-back.png" alt="Back">
+                                    Back
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-sm-6 col-xl-6 txt-align-right" >
+                                <button class="page-btn" href="employment-history.html"  [disabled]="f.form.invalid" (click)="onThenSubmit()">
+                                    Next
+                                    <img back="" src="../../../../../assets/img/icon-next.png" alt="Next">
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>

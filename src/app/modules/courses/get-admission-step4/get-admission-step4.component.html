@@ -1,0 +1,159 @@
+<header id="small-header" class="mr-top" style="background-image: url(../../../../assets/img/bg-bg.png);">
+    <div class="text">
+        <h1>Get Admission</h1>
+        <p>Azzuha Islamic Institute</p>
+    </div>
+</header>
+
+<section id="get-admission-page" class="container-fluid">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="admission-pnl">
+                    <div class="admission-pnl-inner">
+                        <div class="get-admission-head">
+                            <ul>
+                                <li class="active complete">
+                                    <span>1</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 1 <span>Complete</span>
+                                        </p>
+                                        <h6>Student Information</h6>
+                                    </div>
+                                </li>
+                                <li class="active complete">
+                                    <span>2</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 2 <span>Complete</span>
+                                        </p>
+                                        <h6>Accademic Information</h6>
+                                    </div>
+                                </li>
+                                <li class="active complete">
+                                    <span>3</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 3 <span>Complete</span>
+                                        </p>
+                                        <h6>Attach Documents</h6>
+                                    </div>
+                                </li>
+                                <li class="active">
+                                    <span>4</span>
+                                    <div class="txt">
+                                        <p>
+                                            Step 4 <span>Complete</span>
+                                        </p>
+                                        <h6>Preview Form</h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="get-admission-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <h5>Student Information</h5>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <label>Full Name</label>
+                                        <h6>{{personalInformation.name}}</h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <label>Phone Number</label>
+                                        <h6>{{personalInformation.phoneNumber}}</h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <label>E-mail</label>
+                                        <h6>{{personalInformation.emailAddress}}</h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <label>Father/Husband,s Name</label>
+                                        <h6>{{personalInformation.fatherName}}</h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <label>Date Of Birth</label>
+                                        <h6>{{personalInformation.dob}}</h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <label>ID Card No (Self)</label>
+                                        <h6>{{personalInformation.idCardNumber}}</h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <label>Current Address</label>
+                                        <h6>{{personalInformation.currentAddress}}</h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <label>City</label>
+                                        <h6>{{personalInformation.city}}</h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <label>Country</label>
+                                        <h6>{{personalInformation.country}}</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <h5>Accademic Information</h5>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <label>Previous Education</label>
+                                        <h6>Master</h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <label>From</label>
+                                        <h6>{{AcadmicInformation.peducationFrom}}</h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <label>Course you want to apply</label>
+                                        <h6>{{course.courseName}}</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <h5>Attached Document</h5>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12" *ngIf="AcadmicUpload.schoolRecordUrl">
+                                        <label>Copies of your High School record</label>
+                                        <h6 >HighSchoolRecord.jpg</h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12"  *ngIf="AcadmicUpload.cnicurl">
+                                        <label>Copy of CNIC/Birth certificate</label>
+                                        <h6>Mycnic.jpg</h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12"  *ngIf="AcadmicUpload.bformUrl">
+                                        <label>Copy of B-Form</label>
+                                        <h6>B-Form.jpg</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                            <label class="form-check-label" for="inlineCheckbox1">I hereby solemnly
+                                                declare that above information is true. I promise to abide by all
+                                                the rules and regulations of the institute.
+                                                Please check a our privacy policy.</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <img src="../../../../assets/img/captcha.png" alt="captcha">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="get-admission-footer">
+                            <div>
+                                <a disabled="" class="reg-btn sky fill" href="get-admission-3.html" >Back</a>
+                                <a disabled="" class="reg-btn blue fill" (click)="onSaveToDb()">Submit</a>
+                            </div>
+                            <span>4/4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

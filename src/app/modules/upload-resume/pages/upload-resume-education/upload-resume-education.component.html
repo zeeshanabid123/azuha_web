@@ -1,0 +1,127 @@
+<section id="employment-history-page" class="component-page container-fluid">
+    <div class="row">
+        <div class="general-div">
+            <div class="row">
+                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+                    <h1>Score Components</h1>
+                </div>
+                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 txt-right">
+                    <div class="nav-search">
+                        <input class="form-control" type="search" placeholder="" aria-label="Search">
+                        <button type="submit"><img src="../../../../../assets/img/icon-search-blue.png" alt="search Icon"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-div">
+                <div class="component-intro">
+                    <div class="txt-pnl">
+                        <div class="table-cell">
+                            <div class="table-cell-center">
+                                <h2>Education</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-pnl">
+                        <img src="../../../../../assets/img/education.png" alt="Education">
+                    </div>
+                </div>
+            </div>
+            <div class="coil-md-12 col-lg-12 col-sm-12 col-xl-12">
+                <form name="templateform" (ngSubmit)="f2.form.valid" #f2="ngForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+                            <div class="full-div addition-panel">
+                                <!-- Post -->
+                                <div class="full-div addition-panel-inner"  *ngFor="let ad of edu; let i = index; trackBy:trackByFn">
+                                    <div class="padding-div" >
+                                        <div class="row">
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                                <label>
+                                                    School / College / University
+                                                </label>
+                                                <select class="form-control" required [(ngModel)]="ad.name" #name="ngModel"  name="name_{{i}}">
+                                                    <option value="School">School</option>
+                                                    <option value="College">College</option>
+                                                    <option value="University">University</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                                                <label>
+                                                    Degree <span>*</span>
+                                                </label>
+                                                <input type="text" required [(ngModel)]="ad.degree" #degree="ngModel"  name="degree_{{i}}" class="form-control" placeholder="" autocomplete="off">
+                                            </div>
+                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                                                <label>
+                                                    Major
+                                                </label>
+                                                <input type="text" required [(ngModel)]="ad.major" #major="ngModel"  name="major_{{i}}" class="form-control" placeholder="" autocomplete="off">
+                                            </div>
+                                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                                                <label>
+                                                    Start Date
+                                                </label>
+                                                <div class="date-calender-panel">
+                                                    <input type="text" ngbDatepicker
+                                                     #d="ngbDatepicker"
+                                                    readonly required [(ngModel)]="ad.startDate" #startDate="ngModel"  name="startDate_{{i}}"  class="form-control" placeholder=""  class="form-control" placeholder="" autocomplete="off">
+                                                    <button (click)="d.toggle()"><img src="../../../../../assets/img/icon-calender.png" alt="calender"></button>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                                                <label>
+                                                    End Date
+                                                </label>
+                                                <div class="date-calender-panel">
+                                                    <input type="text"  ngbDatepicker
+                                                    
+                                                     #d1="ngbDatepicker"
+                                                    readonly required [(ngModel)]="ad.endate" #endate="ngModel"  name="endate_{{i}}"   name="enddate" class="form-control" placeholder="" >
+                                                    <button (click)="d1.toggle()"><img src="../../../../../assets/img/icon-calender.png" alt="calender"></button>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                                                <label>
+                                                    GPA
+                                                </label>
+                                                <input type="text" required [(ngModel)]="ad.gpA" #gpA="ngModel"  name="gpA_{{i}}" class="form-control" placeholder="" autocomplete="off">
+                                            </div>
+                                            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+
+                                            </div>
+                                            <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 txt-right">
+                                                <a class="remove-btn" href="javascript:void(0);" (click)="onRemoveRow(i)">
+                                                    <div class="img-pnl">
+                                                        <img src="../../../../../assets/img/icon-recycle.png" alt="Delete">
+                                                    </div>
+                                                    Remove
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Post -->
+                                <a class="add-btn" style=" margin: 43px 48px;" (click)="addRow()" href="javascript:void(0);"><img src="../../../../../assets/img/icon-add.png" alt="add"> Add</a>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xl-6">
+                            <a class="page-btn" href="employment-history.html" [routerLink]="[routesConfig.routes.uploadresume.empolymenthistory]">
+                                <img src="../../../../../assets/img/icon-back.png" alt="Back">
+                                Back
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xl-6 txt-align-right">
+                            <button class="page-btn" href="certifications-trainings.html" (click)="doSubmit()" [disabled]="f2.form.invalid || edu.length === 0">
+                                Next
+                                <img back="" src="../../../../../assets/img/icon-next.png" alt="Next">
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>

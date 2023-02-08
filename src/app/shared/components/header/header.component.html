@@ -1,0 +1,266 @@
+
+<!-- Navigation Ends Here
+  ========================= -->
+    <!-- Navigation Starts Here
+    =========================== -->
+    <!-- <nav id="main-navigation" class="navbar navbar-expand-lg navbar-light" [ngClass]="{'profile-nav': (user && user.email)}">
+
+        <div class="container">
+            <a class="navbar-brand" [routerLink]="'/'" ><img src="https://cf-simple-s3-origin-isolategym-s3-cf-939946006481.s3.amazonaws.com/img/logo.svg" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" [class.active]="isMenuOpen" #toggleButton (click)="toggleMenu1($event)"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [class.show]="isMenuOpen">
+              <div class="navbar-nav">
+                <div class="menu-btn-cntnr" ngbDropdown>
+                  <a class="nav-item nav-link menu-btn" 
+                  href="javascript:void(0);" ngbDropdownToggle><b>MENU <img src="https://cf-simple-s3-origin-isolategym-s3-cf-939946006481.s3.amazonaws.com/img/arrow-down.svg" alt="Arrow"></b></a>
+                  <ul class="menu-list" ngbDropdownMenu>
+                    <li ngbDropdownItem>
+                      <a href="/">Home</a>
+                    </li>
+                    <li ngbDropdownItem>
+                      <a  href="trainer.html"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                        true}" [routerLink]="[routesConfig.routesNames.allTrainners]">Trainers </a>
+                    </li>
+                    <li ngbDropdownItem>
+                      <a  routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                        true}" [routerLink]="[routesConfig.routes.blog.basePath]">Blog</a>
+                    </li>
+                    <li ngbDropdownItem>
+                      <a   routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                        true}" [routerLink]="[routesConfig.routesNames.contactUs]">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+                <a class="nav-item nav-link"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                  true}" (click)="toggleMenu1($event)" [routerLink]="[routesConfig.routesNames.isoFindClub]"><img src="https://cf-simple-s3-origin-isolategym-s3-cf-939946006481.s3.amazonaws.com/img/marker.svg" alt="Find"> FIND CLUB</a>
+               
+                <div class="profile-list" *ngIf="(user && user.email)"  ngbDropdown> 
+                  <a class="nav-item nav-link profile-link" href="javascript:void(0);"  ngbDropdownToggle>
+                    <img src="https://cf-simple-s3-origin-isolategym-s3-cf-939946006481.s3.amazonaws.com/img/user.svg" alt="Find"> 
+                 {{this.loginResponseModel.firstName}}  {{this.loginResponseModel.lastName}}
+                    <div class="profile-img">
+                      <img src="{{this.loginResponseModel.profileImage.thumbnailbUrl}}" alt="profile-pic">
+                      <span><i class="fa fa-angle-down"></i></span>
+                    </div>
+                  </a>
+                  <ul class="profile-menu-list"  *ngIf="(user && user.email)" ngbDropdownMenu>
+                    <span class="dot-span"></span>
+                    <span class="dot-span"></span>
+                    <span class="dot-span"></span>
+                    <li ngbDropdownItem>
+                      <a  href="my-profile.html" [routerLink]="[routesConfig.routes.trainerDashboard.basePath]">My Profile</a>
+                    </li>
+                    
+                    <li ngbDropdownItem *ngIf="loginResponseModel.isApproved==true && loginResponseModel.isSubscribed==true">
+                      <a  href="time-schedule.html" #link routerLink="/dashboard/slots-detail">Time Schedule</a>
+                    </li>
+                    <li ngbDropdownItem *ngIf="loginResponseModel.isApproved==true && loginResponseModel.isSubscribed==false">
+                      <a  href="time-schedule.html" #link routerLink="/dashboard/trainer-time-schedule">Time Schedule</a>
+                    </li>
+                    <li ngbDropdownItem  *ngIf="loginResponseModel.isApproved==true">
+                      <a  href="subscription.html" #link routerLink="/dashboard/trainer-package-subscription"> Subscription</a>
+                    </li>
+                    <li ngbDropdownItem>
+                      <a  href="transaction-history.html">Transaction History</a>
+                    </li>
+                    <li ngbDropdownItem>
+                      <a  (click)="onLogout()" href="index.html">Logout</a>
+                    </li>
+                  </ul>
+                </div>
+                 <a class="nav-item nav-link login-anchor"  *ngIf="!user || !user.email" [routerLink]="[routesConfig.routes.account.login]"><img src="../../assets/img/user.svg" alt="login"> LOGIN</a>
+                <a class="nav-item nav-link join-now-btn" *ngIf="!user || !user.email" [routerLink]="[routesConfig.routes.isoProfileSignUp.step1]">Join Now</a> 
+              </div>
+            </div>
+          </div>
+    </nav> -->
+    <!-- Navigation Ends Here
+    ========================= -->
+  
+
+    <nav id="main-navigation" class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- Nav Top-->
+<div class="full-div nav-top">
+  <div class="container">
+      <div class="txt">
+          <p>
+              <b>Institute Time</b>
+              Morning Shift: 8:00AM to 2:00PM - Evening Shift: 2:00PM to 7:00PM
+          </p>
+      </div>
+      <div class="txt">
+          <ul class="top-social-list">
+              <li>
+                  <a href="tel:+923354387035">
+                      <i class="fa fa-phone"></i>
+                      +92 335 4387035
+                  </a>
+              </li>
+              <li><a target="_blank" href="https://www.facebook.com/AzZuhaaIslamicInstitute/"><i
+                          class="fa fa-facebook"></i></a></li>
+              <li><a target="_blank" href="https://twitter.com/azzuhaa?s=08l"><i class="fa fa-twitter"></i></a></li>
+              <li><a target="_blank" href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
+              <li><a target="_blank" href="https://youtube.com/channel/UCAwcvDhb3_6MvSOpl-75DJQ"><i
+                          class="fa fa-youtube-play"></i></a></li>
+              <li><a target="_blank" href="https://instagram.com/azzuhaaofficial?utm_medium=copy_link"><i
+                          class="fa fa-instagram"></i></a></li>
+              <li><a target="_blank" href=""><i class="fa fa-whatsapp"></i></a></li>
+              <li class="dropdown">
+                  <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="fa fa-dribbble"></i> English
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#">Arabic</a>
+                      <a class="dropdown-item" href="#">Farsi</a>
+                      <a class="dropdown-item" href="#">Urdu</a>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
+<!-- Nav Top-->
+<!-- Nav Mid -->
+<div class="container nav-mid">
+  <a class="navbar-brand logo" href="index.html"><img src="../../../../assets/img/logo.png" alt="Logo" /></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link login-btn" href="login.html">LOGIN</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link get-admission-btn"  [routerLink]="['/courses/admision-step1/33cc5316-49ed-4865-a0b0-b850d8840061']" >Get Admission</a>
+          </li>
+          <li class="dropdown log-item">
+              <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <p>Welcome!</p>
+                  <h6>Hamid-ul-hassan</h6>
+                  <i class="fa fa-angle-down"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <h5>Hamid-ul-hassan</h5>
+                  <p>Hamid-ul-hassan@gmial.com</p>
+                  <a href="edit-profile.html" class="reg-btn sky fill">Edit Profile</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="my-courses.html"><img src="../../../../assets/img/course-icon.png" alt="COurse">
+                      Courses</a>
+                  <a class="dropdown-item" href="profile.html"><img src="../../../../assets/img/user-icon.png" alt="User"> Profile</a>
+                  <a class="dropdown-item" href="fee-account.html"><img src="../../../../assets/img/free-icon.png" alt="Fee"> Fee
+                      Payment</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="login.html"><img src="../../../../assets/img/logout-icon.png" alt="Logout"> Logout</a>
+              </div>
+          </li>
+          <li class="nav-item mobile">
+              <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item mobile">
+              <a class="nav-link" href="" [routerLink]="[routesConfig.routes.about]">About</a>
+          </li>
+          <li class="nav-item mobile">
+              <a class="nav-link" href="upcoming.html" >Upcoming</a>
+          </li>
+          <li class="nav-item mobile">
+              <a class="nav-link" href="degree-program.html" [routerLink]="[routesConfig.routes.DegreeProgram]">Degree Program</a>
+          </li>
+          <li class="nav-item mobile">
+              <a class="nav-link" href="courses.html" [routerLink]="[routesConfig.routes.courses]">Courses</a>
+          </li>
+          <li class="nav-item mobile">
+              <a class="nav-link" href="kids-corner.html" [routerLink]="[routesConfig.routes.kidsCorner]">Kids Corner</a>
+          </li>
+          <li class="nav-item dropdown mobile">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Media
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="audio.html">Audios</a>
+                  <a class="dropdown-item" href="video.html">Videos</a>
+              </div>
+          </li>
+          <li class="nav-item mobile">
+              <a class="nav-link" href="social-welfare.html" [routerLink]="[routesConfig.routes.socialWalfare]">Social Welfare</a>
+          </li>
+          <li class="nav-item mobile">
+              <a class="nav-link" href="contact.html" [routerLink]="[routesConfig.routes.contact]">Contact</a>
+          </li>
+      </ul>
+  </div>
+</div>
+<!-- Nav Mid -->
+<!-- Nav Bottom-->
+<div class="nav-bottom">
+  <div class="container">
+      <ul class="nav-list">
+          <li>
+              <a href="index.html" >
+                  Home
+              </a>
+          </li>
+          <li>
+              <a href="about.html" [routerLink]="[routesConfig.routes.about]">
+                  About
+              </a>
+          </li>
+          <li>
+              <a href="upcoming.html" [routerLink]="[routesConfig.routes.upcoming]">
+                  Upcoming
+              </a>
+          </li>
+          <li>
+              <a href="degree-program.html" [routerLink]="[routesConfig.routes.DegreeProgram]">
+                  Degree Program
+              </a>
+          </li>
+          <li>
+              <a href="courses.html" [routerLink]="[routesConfig.routes.courses]">
+                  Courses
+              </a>
+          </li>
+          <li>
+              <a href="kids-corner.html" [routerLink]="[routesConfig.routes.kidsCorner]">Kids Corner</a>
+          </li>
+          <li class="nav-item dropdown" [class.show]="isMenuOpen">
+              <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" (click)="toggleMenu1($event)">
+                  Media
+              </a>
+              <div class="dropdown-menu" [class.show]="isMenuOpen" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="audio.html" [routerLink]="[routesConfig.routes.media+'/audio']">Audios</a>
+                  <a class="dropdown-item" href="video.html" [routerLink]="[routesConfig.routes.media+'/video']">Videos</a>
+              </div>
+          </li>
+          <li>
+              <a href="social-welfare.html" [routerLink]="[routesConfig.routes.socialWalfare]">
+                  Social Welfare
+              </a>
+          </li>
+          <li>
+              <a href="contact.html" [routerLink]="[routesConfig.routes.contact]">
+                  Contact
+              </a>
+          </li>
+      </ul>
+  </div>
+</div>
+<!-- Nav Bottom-->
+</nav>
+<section class="progress-bar" *ngIf="progressBarMode === 'query'">
+  <mat-progress-bar [color]="'primary'" [mode]="progressBarMode">
+  </mat-progress-bar>
+</section>
+  
